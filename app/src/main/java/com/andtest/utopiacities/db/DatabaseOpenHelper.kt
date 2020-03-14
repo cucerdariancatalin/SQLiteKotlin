@@ -51,7 +51,7 @@ class DatabaseOpenHelper(
 
         val inputStream = context!!.assets.open("dbs/$DATABASE_NAME")
 
-        val outputFile = File(context!!.getDatabasePath(DATABASE_NAME).path)
+        val outputFile = File(context.getDatabasePath(DATABASE_NAME).path)
         val outputStream = FileOutputStream(outputFile)
 
         val bytesCopied = inputStream.copyTo(outputStream)

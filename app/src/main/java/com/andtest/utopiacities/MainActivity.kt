@@ -1,20 +1,17 @@
 package com.andtest.utopiacities
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
+import android.widget.ListView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.andtest.utopiacities.adapter.CityAdapter
 import com.andtest.utopiacities.utils.Utils
 import com.andtest.utopiacities.viewmodel.CityViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var cityRecyclerView: RecyclerView
+    private lateinit var cityListView: ListView
     private lateinit var adapter: CityAdapter
     private lateinit var viewModel: CityViewModel
 
@@ -22,9 +19,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        cityRecyclerView = findViewById(R.id.rvCityList)
+        cityListView = findViewById(R.id.rvCityList)
 
-        val factory = Utils.provideViewModelFactory(this)
+        val factory = Utils.provideViewModelFactory()
         viewModel = ViewModelProvider(this, factory).get(CityViewModel::class.java)
     }
 
@@ -42,7 +39,6 @@ class MainActivity : AppCompatActivity() {
     private fun loadCities() {
         val cities = viewModel.loadCities(this)
         adapter = CityAdapter(this, cities)
-        cityRecyclerView.adapter = adapter
-        cityRecyclerView.layoutManager = LinearLayoutManager(this)
+        cityListView.adapter = adapter
     }
 }

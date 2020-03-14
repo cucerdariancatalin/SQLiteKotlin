@@ -6,7 +6,7 @@ import com.andtest.utopiacities.repository.CityRepository
 import com.andtest.utopiacities.viewmodel.CityViewModelFactory
 
 object Utils {
-    fun provideViewModelFactory(context: Context) : CityViewModelFactory {
+    fun provideViewModelFactory() : CityViewModelFactory {
         var repository = CityRepository.getInstance(Database.getInstance().cityDao)
         return CityViewModelFactory(repository)
     }
