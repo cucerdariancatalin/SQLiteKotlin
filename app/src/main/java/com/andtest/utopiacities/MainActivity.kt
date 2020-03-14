@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.andtest.utopiacities.adapter.CityAdapter
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         cityRecyclerView = findViewById(R.id.rvCityList)
 
         val factory = Utils.provideViewModelFactory(this)
-        viewModel = ViewModelProviders.of(this, factory).get(CityViewModel::class.java)
+        viewModel = ViewModelProvider(this, factory).get(CityViewModel::class.java)
     }
 
     override fun onResume() {
