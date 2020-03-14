@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.andtest.utopiacities.adapter.CityAdapter
 import com.andtest.utopiacities.utils.Utils
 import com.andtest.utopiacities.viewmodel.CityViewModel
