@@ -1,7 +1,5 @@
 package com.andtest.utopiacities.db
 
-import androidx.annotation.NonNull
-
 class ContractClass private constructor() {
     companion object class City {
         companion object {

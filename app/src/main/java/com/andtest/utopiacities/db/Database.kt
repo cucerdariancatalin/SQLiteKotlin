@@ -1,6 +1,5 @@
 package com.andtest.utopiacities.db
 
-import android.content.Context
 import com.andtest.utopiacities.viewmodel.CityDao
 
 class Database() {

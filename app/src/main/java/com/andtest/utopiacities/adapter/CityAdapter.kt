@@ -46,5 +46,4 @@ class CityAdapter(private val context: Context, private val cities: ArrayList<Ci
     override fun getCount(): Int {
         return cities?.size as Int
     }
-
 }
